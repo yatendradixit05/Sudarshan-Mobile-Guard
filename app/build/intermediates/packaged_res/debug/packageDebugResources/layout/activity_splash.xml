@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/bg_dark">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🛡️"
+        android:textSize="80sp"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUDARSHAN"
+        android:textColor="@color/accent_amber"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MOBILE GUARD"
+        android:textColor="@color/text_secondary"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.3"
+        android:layout_marginBottom="48dp" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Initializing threat engine…"
+        android:textColor="@color/text_hint"
+        android:textSize="11sp"
+        android:fontFamily="monospace"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>

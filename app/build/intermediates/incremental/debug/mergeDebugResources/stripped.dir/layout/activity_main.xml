@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SUDARSHAN"
+                android:textColor="@color/accent_amber"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MOBILE GUARD"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- Risk Gauge Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="24dp">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/risk_gauge"
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:progress="0"
+                    app:indicatorSize="140dp"
+                    app:trackThickness="12dp"
+                    app:trackColor="@color/gauge_track"
+                    app:indicatorColor="@color/safe_green" />
+
+                <TextView
+                    android:id="@+id/tv_risk_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-90dp"
+                    android:text="--"
+                    android:textColor="@color/text_primary"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="90dp" />
+
+                <TextView
+                    android:id="@+id/tv_risk_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="SCAN YOUR DEVICE"
+                    android:textColor="@color/accent_amber"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.1" />
+
+                <!-- Stats row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_total_scans"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/text_primary"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apps Scanned"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:background="@color/divider" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_threats_found"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/text_primary"
+                            android:textSize="26sp"
+                            android:textStyle="bold"
+                            android:fontFamily="monospace" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Threats Found"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Action Buttons -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_scan_all"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="12dp"
+            android:text="⬛  FULL DEVICE SCAN"
+            android:textColor="@color/bg_dark"
+            android:textSize="14sp"
+            android:fontFamily="monospace"
+            android:textStyle="bold"
+            app:backgroundTint="@color/accent_amber"
+            app:cornerRadius="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_scan_apk"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginBottom="12dp"
+            android:text="📂  SCAN APK FILE"
+            android:textColor="@color/accent_amber"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            app:backgroundTint="@color/card_bg"
+            app:strokeColor="@color/accent_amber"
+            app:strokeWidth="1dp"
+            app:cornerRadius="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_view_history"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginBottom="24dp"
+            android:text="🕐  SCAN HISTORY"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            app:backgroundTint="@color/card_bg"
+            app:strokeColor="@color/divider"
+            app:strokeWidth="1dp"
+            app:cornerRadius="12dp" />
+
+        <!-- Recent Scans -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="RECENT SCANS"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="12dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recent_scans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false" />
+
+    </LinearLayout>
+</ScrollView>

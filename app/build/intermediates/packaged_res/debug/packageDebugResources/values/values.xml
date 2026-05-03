@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent_amber">#F0A500</color>
+    <color name="accent_amber_dark">#C88400</color>
+    <color name="accent_blue">#58A6FF</color>
+    <color name="bg_dark">#0D1117</color>
+    <color name="card_bg">#161B22</color>
+    <color name="card_bg_elevated">#1C2128</color>
+    <color name="colorAccent">#F0A500</color>
+    <color name="colorPrimary">#F0A500</color>
+    <color name="colorPrimaryDark">#0D1117</color>
+    <color name="divider">#30363D</color>
+    <color name="gauge_track">#21262D</color>
+    <color name="risk_critical">#B71C1C</color>
+    <color name="risk_high">#DD2C00</color>
+    <color name="risk_low">#64DD17</color>
+    <color name="risk_medium">#FF6F00</color>
+    <color name="safe_green">#00C853</color>
+    <color name="text_hint">#484F58</color>
+    <color name="text_primary">#E6EDF3</color>
+    <color name="text_secondary">#8B949E</color>
+    <string name="app_name">Sudarshan Guard</string>
+    <string name="app_name_full">Sudarshan Mobile Guard</string>
+    <string name="btn_back">← Back</string>
+    <string name="btn_history">SCAN HISTORY</string>
+    <string name="btn_scan_all">FULL DEVICE SCAN</string>
+    <string name="btn_scan_apk">SCAN APK FILE</string>
+    <string name="btn_view_report">VIEW REPORT</string>
+    <string name="label_installer">Installer</string>
+    <string name="label_package">Package</string>
+    <string name="label_permissions">Permissions</string>
+    <string name="label_risk_score">Risk Score</string>
+    <string name="label_scan_time">Scanned</string>
+    <string name="label_sha256">SHA-256</string>
+    <string name="notif_guard_text">Monitoring for malicious apps…</string>
+    <string name="notif_guard_title">Sudarshan Guard Active</string>
+    <string name="notif_threat_title">Threat Detected!</string>
+    <string name="scan_behavior">Analyzing app behavior…</string>
+    <string name="scan_complete">Scan complete</string>
+    <string name="scan_db_lookup">Checking malware database…</string>
+    <string name="scan_hashing">Computing SHA-256 hash…</string>
+    <string name="scan_permissions">Analyzing permissions…</string>
+    <string name="scan_preparing">Preparing scan…</string>
+    <string name="verdict_critical">CRITICAL THREAT. Do NOT use this app.</string>
+    <string name="verdict_safe">App appears clean. No threats detected.</string>
+    <style name="SudarshanButton" parent="Widget.Material3.Button">
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    <style name="Theme.SudarshanGuard" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/accent_amber</item>
+        <item name="colorPrimaryVariant">@color/accent_amber_dark</item>
+        <item name="colorSecondary">@color/accent_blue</item>
+        <item name="colorSurface">@color/card_bg</item>
+        <item name="android:colorBackground">@color/bg_dark</item>
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="android:statusBarColor">@color/bg_dark</item>
+        <item name="android:navigationBarColor">@color/bg_dark</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="materialButtonStyle">@style/SudarshanButton</item>
+    </style>
+    <style name="Theme.SudarshanGuard.Splash" parent="Theme.SudarshanGuard">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "com.sudarshan.mobileguard.app-mergeDebugResources-39:/layout/activity_splash.xml",
+        "source": "com.sudarshan.mobileguard.app-main-42:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "com.sudarshan.mobileguard.app-mergeDebugResources-39:/layout/item_scan_result.xml",
+        "source": "com.sudarshan.mobileguard.app-main-42:/layout/item_scan_result.xml"
+    },
+    {
+        "merged": "com.sudarshan.mobileguard.app-mergeDebugResources-39:/layout/activity_report.xml",
+        "source": "com.sudarshan.mobileguard.app-main-42:/layout/activity_report.xml"
+    },
+    {
+        "merged": "com.sudarshan.mobileguard.app-mergeDebugResources-39:/layout/activity_main.xml",
+        "source": "com.sudarshan.mobileguard.app-main-42:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.sudarshan.mobileguard.app-mergeDebugResources-39:/layout/row_info_item.xml",
+        "source": "com.sudarshan.mobileguard.app-main-42:/layout/row_info_item.xml"
+    },
+    {
+        "merged": "com.sudarshan.mobileguard.app-mergeDebugResources-39:/layout/activity_history.xml",
+        "source": "com.sudarshan.mobileguard.app-main-42:/layout/activity_history.xml"
+    },
+    {
+        "merged": "com.sudarshan.mobileguard.app-mergeDebugResources-39:/layout/activity_scan.xml",
+        "source": "com.sudarshan.mobileguard.app-main-42:/layout/activity_scan.xml"
+    }
+]

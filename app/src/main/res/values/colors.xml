@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Palette: Deep Navy + Amber (matches your portfolio aesthetic) -->
+    <color name="bg_dark">#0D1117</color>
+    <color name="card_bg">#161B22</color>
+    <color name="card_bg_elevated">#1C2128</color>
+    <color name="divider">#30363D</color>
+
+    <!-- Text -->
+    <color name="text_primary">#E6EDF3</color>
+    <color name="text_secondary">#8B949E</color>
+    <color name="text_hint">#484F58</color>
+
+    <!-- Accent -->
+    <color name="accent_amber">#F0A500</color>
+    <color name="accent_amber_dark">#C88400</color>
+    <color name="accent_blue">#58A6FF</color>
+
+    <!-- Risk Colors -->
+    <color name="safe_green">#00C853</color>
+    <color name="risk_low">#64DD17</color>
+    <color name="risk_medium">#FF6F00</color>
+    <color name="risk_high">#DD2C00</color>
+    <color name="risk_critical">#B71C1C</color>
+
+    <!-- UI Elements -->
+    <color name="gauge_track">#21262D</color>
+
+    <!-- Status bar -->
+    <color name="colorPrimaryDark">#0D1117</color>
+    <color name="colorPrimary">#F0A500</color>
+    <color name="colorAccent">#F0A500</color>
+</resources>

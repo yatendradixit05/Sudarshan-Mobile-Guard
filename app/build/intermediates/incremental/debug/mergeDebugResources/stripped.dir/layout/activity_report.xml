@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_back"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Back"
+                android:textColor="@color/accent_amber"
+                android:fontFamily="monospace" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="SCAN REPORT"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:fontFamily="monospace"
+                android:gravity="end"
+                android:letterSpacing="0.1" />
+        </LinearLayout>
+
+        <!-- Verdict Banner -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/verdict_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/report_risk_gauge"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:progress="0"
+                    app:indicatorSize="72dp"
+                    app:trackThickness="8dp"
+                    app:trackColor="@color/gauge_track"
+                    app:indicatorColor="@color/safe_green"
+                    android:layout_marginEnd="16dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_app_name_report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="App Name"
+                        android:textColor="@color/text_primary"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_verdict"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Verdict"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="4dp" />
+
+                    <TextView
+                        android:id="@+id/tv_risk_score_report"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0/100"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:fontFamily="monospace"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_risk_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAFE"
+                    android:textColor="@color/bg_dark"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:padding="8dp"
+                    android:background="@drawable/badge_bg" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Hash Match Alert -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_hash_match"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="#1FDD2C00"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#FFDD2C00"
+            app:strokeWidth="1dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔴 KNOWN MALWARE DETECTED"
+                    android:textColor="#FFDD2C00"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tv_hash_threat_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- App Info Card -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="APP INFORMATION"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:layout_marginBottom="12dp" />
+
+                <include layout="@layout/row_info_item"
+                    android:id="@+id/row_package" />
+
+                <!-- Individual rows via Java -->
+                <LinearLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/ll_app_info_rows">
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                            android:text="Package" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="monospace" />
+                        <TextView android:id="@+id/tv_package_name"
+                            android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:textColor="@color/text_primary"
+                            android:textSize="12sp" android:fontFamily="monospace" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                            android:text="Installer" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="monospace" />
+                        <TextView android:id="@+id/tv_installer_source"
+                            android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:textColor="@color/text_primary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                            android:text="Size" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="monospace" />
+                        <TextView android:id="@+id/tv_apk_size"
+                            android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:textColor="@color/text_primary"
+                            android:textSize="12sp" android:fontFamily="monospace" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                            android:text="Scanned" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="monospace" />
+                        <TextView android:id="@+id/tv_scan_time"
+                            android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:textColor="@color/text_primary"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView android:layout_width="120dp" android:layout_height="wrap_content"
+                            android:text="SHA-256" android:textColor="@color/text_secondary"
+                            android:textSize="12sp" android:fontFamily="monospace" />
+                        <TextView android:id="@+id/tv_sha256"
+                            android:layout_width="0dp" android:layout_height="wrap_content"
+                            android:layout_weight="1" android:textColor="@color/text_secondary"
+                            android:textSize="10sp" android:fontFamily="monospace"
+                            android:ellipsize="end" android:maxLines="2" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Dangerous Permissions Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_dangerous_permissions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠ DANGEROUS PERMISSIONS"
+                    android:textColor="#FFDD2C00"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.1"
+                    android:layout_marginBottom="12dp" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_group_dangerous_perms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Suspicious Findings Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_suspicious_findings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="THREAT INDICATORS"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_suspicious_findings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Safe Indicators Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_safe_indicators"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_bg"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAFE INDICATORS"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.15"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_safe_indicators"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

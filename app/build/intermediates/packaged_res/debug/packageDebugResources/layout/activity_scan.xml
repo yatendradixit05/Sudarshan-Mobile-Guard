@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_dark"
+    android:gravity="center"
+    android:padding="28dp">
+
+    <!-- Shield Icon area -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🛡"
+        android:textSize="64sp"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUDARSHAN SCAN"
+        android:textColor="@color/accent_amber"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.12"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Current app being scanned -->
+    <TextView
+        android:id="@+id/tv_current_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preparing scan..."
+        android:textColor="@color/text_primary"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Phase label -->
+    <TextView
+        android:id="@+id/tv_phase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:fontFamily="monospace"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Progress bar -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/scan_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="0"
+        app:trackThickness="8dp"
+        app:trackCornerRadius="4dp"
+        app:indicatorColor="@color/accent_amber"
+        app:trackColor="@color/gauge_track"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Percent -->
+    <TextView
+        android:id="@+id/tv_progress_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textColor="@color/accent_amber"
+        android:textSize="13sp"
+        android:fontFamily="monospace"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Summary (shown after scan completes) -->
+    <TextView
+        android:id="@+id/tv_scan_summary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:layout_marginBottom="16dp" />
+
+    <!-- View results button (shown after scan completes) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_view_results"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:text="VIEW REPORT"
+        android:textColor="@color/bg_dark"
+        android:textStyle="bold"
+        android:fontFamily="monospace"
+        app:backgroundTint="@color/accent_amber"
+        app:cornerRadius="12dp"
+        android:visibility="gone" />
+
+</LinearLayout>
