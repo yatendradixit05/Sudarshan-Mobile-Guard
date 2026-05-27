@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="app/src/main/res/drawable/ic_shield_active.xml" width="80" height="80">
-
 # 🛡️ Sudarshan Mobile Guard
 
 **A powerful offline-first Android malware detection app**  
@@ -9,61 +7,90 @@
 
 ![Android](https://img.shields.io/badge/Android-8.0%2B-green?style=flat-square&logo=android)
 ![Java](https://img.shields.io/badge/Java-17-orange?style=flat-square&logo=java)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
 
----
-
-> *"Jaise Sudarshan Chakra har direction se protect karta hai — yeh app aapke phone ko 360° security deta hai"*
+> *"Like Sudarshan Chakra protects from every direction — this app gives your phone 360° security"*
 
 </div>
 
 ---
 
-## 📱 Screenshots
+## 📱 About
+
+Sudarshan Mobile Guard is a full Android security application that detects malicious apps using a **3-layer offline detection engine**. No internet connection is required for core scanning — your data stays on your device.
+
+---
+
+## 📸 Screenshots
 
 | Dashboard | Scanning | Report | History |
 |-----------|----------|--------|---------|
-| ![Dashboard](screenshots/dashboard.jpeg) | ![Scanning](screenshots/scanning.jpeg) | ![Report](screenshots/report.jpeg) | ![History](screenshots/history.jpeg) |
+| ![Dashboard](screenshots/dashboard.jpg) | ![Scanning](screenshots/scanning.jpg) | ![Report](screenshots/report.jpg) | ![History](screenshots/history.jpg) |
 
 ---
 
 ## 🎯 Problem Statement
 
-Aaj India mein:
-- 📊 **67%** Android users unknown sources se APKs install karte hain
-- 💸 Banking trojans har saal **₹1000+ crore** ka fraud karte hain
-- 📵 Existing antivirus apps **internet-dependent** hain
-- 🔍 Users ko pata nahi hota koi app **silently kya kar rahi hai**
+In India today:
+- 📊 **67%** of Android users install APKs from unknown sources
+- 💸 Banking trojans cause **₹1000+ crore** in fraud every year
+- 📵 Existing antivirus apps are **internet-dependent** — useless without data
+- 🔍 Users have no way to know what an app is **silently doing**
 
-**Sudarshan Mobile Guard** iska solution hai — completely **offline**, completely **transparent**.
+**Sudarshan Mobile Guard** solves this — completely **offline**, completely **transparent**.
 
 ---
 
 ## 🔬 3-Layer Detection Engine
+APK File Input
+│
+▼
+┌──────────────────────────────────┐
+│   LAYER 1 — Hash Engine  (40%)   │
+│   SHA-256 fingerprint matching   │
+│   30+ known malware families     │
+└──────────────────────────────────┘
+│
+▼
+┌──────────────────────────────────┐
+│   LAYER 2 — Permission AI (40%)  │
+│   30+ dangerous permissions      │
+│   Context Mismatch Detection     │
+└──────────────────────────────────┘
+│
+▼
+┌──────────────────────────────────┐
+│   LAYER 3 — Behavior  (20%)      │
+│   Installer origin check         │
+│   Brand spoofing detection       │
+│   Hidden app detection           │
+└──────────────────────────────────┘
+│
+▼
+Final Risk Score (0–100)
 ### Layer 1 — SHA-256 Hash Engine
-- Har APK ka **SHA-256 cryptographic fingerprint** nikalta hai
-- **30+ documented malware families** ke against match karta hai
-- Covered families: `BankBot` `Joker` `Triada` `Cerberus` `BlackRock` `AhMyth RAT` `SpyMax` `Hydra` `EventBot` `Ginp` `Alien` `DroidJack` `OmniRAT` and more
-- Hash match = **minimum 80/100 risk score**
+- Computes a **SHA-256 cryptographic fingerprint** of every APK file
+- Matches against a database of **30+ documented malware families**
+- Families covered: `BankBot` `Joker` `Triada` `Cerberus` `BlackRock` `AhMyth RAT` `SpyMax` `Hydra` `EventBot` `DroidJack` `Simplocker` and more
+- A hash match triggers a **minimum risk floor of 80/100**
 
 ### Layer 2 — Permission Intelligence Engine
-- **30+ dangerous permissions** profiled with abuse scenarios
-- **Context Mismatch Detection** — illogical combos flag karta hai:
+- **30+ dangerous permissions** profiled with real-world abuse scenarios
+- **Context Mismatch Detection** flags illogical permission combinations:
 
-| App Type | Permission | Status |
-|----------|-----------|--------|
-| Flashlight | GPS Location | 🚨 Suspicious |
-| Calculator | Read SMS | 🚨 Suspicious |
-| Game | Send SMS | 🚨 Premium Fraud Risk |
-| Any App | Overlay + Accessibility | 🔴 Banking Trojan Signature |
+| App Type | Requested Permission | Risk Flag |
+|----------|---------------------|-----------|
+| Flashlight app | GPS Location | 🚨 Suspicious |
+| Calculator app | Read SMS | 🚨 Suspicious |
+| Game app | Send SMS | 🚨 Premium Fraud Risk |
+| Any app | Overlay + Accessibility | 🔴 Banking Trojan Signature |
 
 ### Layer 3 — Behavior Pattern Analyzer
-- **Installer origin** — Sideloaded apps auto-flagged
-- **Brand spoofing** — Fake SBI/PayTM/Google apps detect karta hai
-- **Typosquatting** — `g00gle`, `facebok`, `whatsaap` patterns
-- **Hidden apps** — No launcher icon = hiding from user
-- **Suspicious components** — keylog, spy, monitor named services
+- **Installer origin check** — sideloaded APKs are automatically flagged
+- **Brand spoofing detection** — identifies fake SBI, PayTM, Google apps
+- **Typosquatting detection** — catches patterns like `g00gle`, `facebok`, `whatsaap`
+- **Hidden app detection** — apps with no launcher icon are flagged
+- **Suspicious component names** — services named keylog, spy, monitor are flagged
 
 ---
 
@@ -71,27 +98,27 @@ Aaj India mein:
 
 | Feature | Description |
 |---------|-------------|
-| 📱 Full Device Scan | Saare installed user apps ek saath scan |
-| 📂 APK File Scanner | Install karne se pehle APK check karo |
-| 🔄 Auto-scan | Nayi app install hote hi automatic scan |
-| 📴 Offline-First | Core scanning mein zero internet required |
-| 📊 Risk Score | 0-100 real-time device health gauge |
-| 📋 Detailed Reports | SHA-256, permissions, behavior findings |
-| 🕐 Scan History | Saare past scans saved in local DB |
-| 🔔 Threat Alerts | Instant notification on threat detection |
-| 🔁 Boot Protection | Device restart pe bhi guard active |
+| 📱 Full Device Scan | Scan all installed user apps at once |
+| 📂 APK File Scanner | Check any APK file before installing it |
+| 🔄 Auto-Scan | Automatically scans every new app on install |
+| 📴 Offline-First | Zero internet required for core scanning |
+| 📊 Risk Score | 0–100 real-time device health gauge |
+| 📋 Detailed Reports | SHA-256 hash, permissions, behavior findings |
+| 🕐 Scan History | All past scans saved in local database |
+| 🔔 Threat Alerts | Instant notification when a threat is detected |
+| 🔁 Boot Protection | Guard service auto-restarts after device reboot |
 
 ---
 
 ## 📊 Risk Level System
 
-| Score | Level | Badge | Action |
-|-------|-------|-------|--------|
-| 0–15 | SAFE | 🟢 | No action needed |
-| 16–35 | LOW | 🟡 | Monitor the app |
-| 36–60 | MEDIUM | 🟠 | Review permissions carefully |
-| 61–80 | HIGH | 🔴 | Uninstall advised |
-| 81–100 | CRITICAL | ⬛ | Uninstall immediately |
+| Score | Level | Action |
+|-------|-------|--------|
+| 0–15 | 🟢 SAFE | No action needed |
+| 16–35 | 🟡 LOW | Monitor the app |
+| 36–60 | 🟠 MEDIUM | Review permissions carefully |
+| 61–80 | 🔴 HIGH | Uninstall advised |
+| 81–100 | ⬛ CRITICAL | Uninstall immediately |
 
 ---
 
@@ -100,51 +127,13 @@ Aaj India mein:
 | Component | Technology |
 |-----------|-----------|
 | Language | Java 17 |
-| Min SDK | Android 8.0 (API 26) |
+| Minimum SDK | Android 8.0 (API 26) |
 | Target SDK | Android 14 (API 34) |
 | Database | Room (SQLite) |
 | UI Framework | Material3 Dark Theme |
 | Architecture | Modular Security Architecture |
-| Hash Algorithm | SHA-256 (MessageDigest) |
+| Hash Algorithm | SHA-256 (Java MessageDigest) |
 | Background | Foreground Service + BroadcastReceiver |
-
----
-
-## 📂 Project Structure
----
-
-## ⚙️ Installation & Setup
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/yatendradixit05/Sudarshan-Mobile-Guard.git
-
-# 2. Open in Android Studio
-# File → Open → Select project folder
-
-# 3. Sync Gradle
-# File → Sync Project with Gradle Files
-
-# 4. Run on device (Android 8.0+)
-# Enable USB Debugging → Connect phone → Press Shift+F10
-```
-
-**Requirements:**
-- Android Studio Hedgehog or newer
-- JDK 17+
-- Android device with API 26+ (Android 8.0)
-
----
-
-## 🔮 Future Roadmap
-
-- [ ] VirusTotal API integration (optional cloud layer)
-- [ ] Automatic hash DB updates via GitHub
-- [ ] DEX bytecode pattern analysis
-- [ ] Network behavior monitoring (VPN API)
-- [ ] PDF report export
-- [ ] Hindi language support
-- [ ] Widget for home screen risk score
 
 ---
 
@@ -165,9 +154,66 @@ git clone https://github.com/yatendradixit05/Sudarshan-Mobile-Guard.git
 
 ---
 
+## 📂 Project Structure
+app/src/main/java/com/sudarshan/mobileguard/
+├── activities/
+│   ├── SplashActivity.java
+│   ├── MainActivity.java         ← Dashboard + Risk Gauge
+│   ├── ScanActivity.java         ← Live scan progress
+│   ├── ReportActivity.java       ← Detailed threat report
+│   └── HistoryActivity.java      ← All past scans
+├── engine/
+│   ├── ScanEngine.java           ← Master orchestrator
+│   ├── HashEngine.java           ← Layer 1: SHA-256
+│   ├── MalwareHashDatabase.java  ← 30+ malware hashes
+│   ├── PermissionIntelligenceEngine.java  ← Layer 2
+│   └── BehaviorPatternAnalyzer.java       ← Layer 3
+├── services/
+│   ├── InstallMonitorService.java ← Persistent guard
+│   ├── PackageInstallReceiver.java← Auto-scan trigger
+│   └── BootReceiver.java
+└── database/
+├── AppDatabase.java
+└── ScanResultDao.java
+---
+
+## ⚙️ Installation & Setup
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yatendradixit05/Sudarshan-Mobile-Guard.git
+
+# 2. Open in Android Studio
+# File → Open → Select the project folder
+
+# 3. Sync Gradle
+# File → Sync Project with Gradle Files
+
+# 4. Run on a physical device (Android 8.0+)
+# Enable USB Debugging → Connect phone → Press Shift+F10
+```
+
+**Requirements:**
+- Android Studio Hedgehog or newer
+- JDK 17+
+- Android device running API 26+ (Android 8.0)
+
+---
+
+## 🔮 Future Roadmap
+
+- [ ] VirusTotal API integration as optional cloud verification layer
+- [ ] Automatic hash database updates via GitHub Actions
+- [ ] DEX bytecode pattern analysis for deeper inspection
+- [ ] Network behavior monitoring using Android VPN API
+- [ ] PDF report export for sharing scan results
+- [ ] Home screen widget displaying live risk score
+
+---
+
 ## 👨‍💻 Developer
 
-**Yatendra Dixit**
+**Yatendra Dixit**  
 B.Tech CSE — Cybersecurity Specialization
 
 [![GitHub](https://img.shields.io/badge/GitHub-yatendradixit05-black?style=flat-square&logo=github)](https://github.com/yatendradixit05)
@@ -177,13 +223,13 @@ B.Tech CSE — Cybersecurity Specialization
 
 ## 📜 Disclaimer
 
-This app analyzes apps on the user's own device only. No data is sent to any external server. Malware hashes are sourced from public threat intelligence databases (MalwareBazaar, ESET, Kaspersky public reports).
+This app only analyzes apps installed on the user's own device. No data is transmitted to any external server. Malware hashes are sourced from public threat intelligence databases including MalwareBazaar, ESET, and Kaspersky public reports.
 
 ---
 
 <div align="center">
 
-**⭐ Agar project helpful laga toh star do!**
+**⭐ If you found this project helpful, please give it a star!**
 
 *Built with ❤️ for cybersecurity — Sudarshan Mobile Guard*
 
