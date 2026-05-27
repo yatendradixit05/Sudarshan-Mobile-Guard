@@ -25,7 +25,7 @@ Sudarshan Mobile Guard is a full Android security application that detects malic
 
 | Dashboard | Scanning | Report | History |
 |-----------|----------|--------|---------|
-| ![Dashboard](screenshots/dashboard.jpg) | ![Scanning](screenshots/scanning.jpg) | ![Report](screenshots/report.jpg) | ![History](screenshots/history.jpg) |
+| ![Dashboard](screenshots/dashboard.jpeg) | ![Scanning](screenshots/scanning.jpeg) | ![Report](screenshots/report.jpeg) | ![History](screenshots/history.jpeg) |
 
 ---
 
